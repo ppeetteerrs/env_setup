@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "env_setup"
+version = "0.1.0"
+description = "Sets up the development environment to my likings."
+authors = ["Peter Yuen"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.0.3"
+shutils = "^0.1.0"
+termcolor = "^1.1.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+autopep8 = "^1.6.0"
+
+[tool.poetry.scripts]
+env_setup = "env_setup.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
