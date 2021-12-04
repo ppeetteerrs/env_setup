@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "env_setup"
+name = "simple_env_setup"
 version = "0.1.0"
-description = "Sets up the development environment to my likings."
+description = "Sets up the development environment to your (my) likings."
 authors = ["Peter Yuen"]
 
 [tool.poetry.dependencies]
@@ -15,7 +15,7 @@ flake8 = "^4.0.1"
 autopep8 = "^1.6.0"
 
 [tool.poetry.scripts]
-env_setup = "env_setup.main:main"
+setup_env = "simple_env_setup.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
