@@ -67,9 +67,9 @@ def install_starship(no_root: bool, force: bool) -> None:
             install_starship_no_root()
         else:
             install_starship_root()
-        overwrite("replace ~/.config/starship.toml",
-                  get_home_dir() / ".config", "starship.toml")
-        update_rc(["starship"])
+    overwrite("replace ~/.config/starship.toml",
+              get_home_dir() / ".config", "starship.toml")
+    update_rc(["starship"])
 
 # ---------------------------------------------------------------------------- #
 #                                    bundle                                    #
