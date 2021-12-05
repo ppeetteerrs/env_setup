@@ -2,13 +2,11 @@ from os import environ
 
 import click
 
-from env_setup.recipes.rust import (install_rust, install_rust_all,
-                                    install_rust_libs)
-from env_setup.recipes.zsh import (install_starship, install_zsh,
-                                   install_zsh_all)
-from env_setup.utils.utils import force, no_root
-
-environ["ENV_SETUP_DRY_RUN"] = ""
+from simple_env_setup.recipes.rust import (install_rust, install_rust_all,
+                                           install_rust_libs)
+from simple_env_setup.recipes.zsh import (install_starship, install_zsh,
+                                          install_zsh_all)
+from simple_env_setup.utils.utils import force, no_root
 
 
 @click.group()

@@ -4,7 +4,8 @@ from os import environ
 from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
-from env_setup.utils.utils import get_home_dir, last_words, read, run_python
+from simple_env_setup.utils.utils import (get_home_dir, last_words, read,
+                                          run_python)
 
 START_MARKER = "# ENV_SETUP_SECTION:"
 END_MARKER = "# ENV_SETUP_SECTION_END:"

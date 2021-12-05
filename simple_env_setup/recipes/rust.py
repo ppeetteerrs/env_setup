@@ -1,7 +1,7 @@
 import click
-from env_setup.utils.utils import (force, get_home_dir, get_tmp_dir,
-                                   log_section, overwrite, run_shell,
-                                   should_install)
+from simple_env_setup.utils.utils import (force, get_home_dir, get_tmp_dir,
+                                          log_section, overwrite, run_shell,
+                                          should_install)
 
 # ---------------------------------------------------------------------------- #
 #                                    rustup                                    #

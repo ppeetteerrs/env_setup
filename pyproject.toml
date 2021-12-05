@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simple_env_setup"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sets up the development environment to your (my) likings."
 authors = ["Peter Yuen"]
 

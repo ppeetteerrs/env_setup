@@ -10,7 +10,7 @@ from typing import (Callable, Concatenate, Iterable, Optional, ParamSpec,
                     TypeVar, Union)
 
 import click
-from env_setup import resources
+from simple_env_setup import resources
 from termcolor import colored
 
 # ---------------------------------------------------------------------------- #
