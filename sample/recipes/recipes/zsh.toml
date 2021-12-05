@@ -1,0 +1,20 @@
+[[zsh.install.no_root.steps]]
+kind = "shell"
+command = "git clone https://gist.github.com/e11816b78ab5c33cbaffad96683b28f0.git {tmp_dir}/zsh_gist"
+
+[[zsh.install.no_root.steps]]
+kind = "shell"
+command = "bash {tmp_dir}/zsh_gist/install_zsh_no_root.sh"
+
+[[zsh.install.root.steps]]
+kind = "shell"
+command = "sudo apt-get install -y zsh"
+
+[[zsh.install.root.steps]]
+kind = "shell"
+command = "wget -qO- https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh"
+
+[[zsh.config.shared.steps]]
+kind = "overwrite"
+replace = "$HOME/.zshrc"
+with = "templates/.zshrc"

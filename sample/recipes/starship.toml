@@ -1,0 +1,33 @@
+[[starship.install.steps]]
+kind = "guard"
+conditions = ["not {root}"]
+
+[[starship.install.steps]]
+kind = "shell"
+command = "wget -O {tmp_dir}/starship_install.sh https://starship.rs/install.sh"
+
+[[starship.install.steps]]
+kind = "shell"
+command = "bash {tmp_dir}/starship_install.sh -y -b $HOME/.local/bin"
+
+[[starship.install.steps]]
+kind = "guard"
+conditions = ["{root}"]
+
+[[starship.install.steps]]
+kind = "shell"
+command = "wget -O {tmp_dir}/starship_install.sh https://starship.rs/install.sh"
+
+[[starship.install.steps]]
+kind = "shell"
+command = "bash {tmp_dir}/starship_install.sh -y"
+
+[[starship.install.steps]]
+kind = "overwrite"
+source = "templates/.zshrc"
+target = "$HOME/.zshrc"
+
+[[starship.install.steps]]
+kind = "update"
+source = "templates/.zshrc"
+target = "$HOME/.zshrc"
