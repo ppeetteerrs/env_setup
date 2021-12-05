@@ -4,12 +4,13 @@ from simple_env_setup.recipes.rust import (install_rust, install_rust_all,
                                            install_rust_libs)
 from simple_env_setup.recipes.zsh import (install_starship, install_zsh,
                                           install_zsh_all)
-from simple_env_setup.utils.rc import add_rc_line, update_rc
-from simple_env_setup.utils.utils import force, no_root
+from simple_env_setup.utils.rc import RC_TEMPLATE, add_rc_line, update_rc
+from simple_env_setup.utils.utils import force, log_section, no_root
 
 
 @click.group(context_settings=dict(help_option_names=["-h", "--help"]))
 def main():
+    log_section("rc file checks")
     update_rc(["shared"])
     add_rc_line("source .shellrc", "source $HOME/.local/.shellrc")
 

@@ -57,7 +57,7 @@ def log_error(logs: Union[str, Iterable[str]]):
 
 
 def last_words(logs: str | Iterable[str]):
-    print(colored("ERROR:", color="red", attrs=["bold"]))
+    print(colored("\nERROR:", color="red", attrs=["bold"]))
     if isinstance(logs, str):
         logs = [logs]
     for log in logs:

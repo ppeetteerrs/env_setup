@@ -121,7 +121,7 @@ class RcFile():
         return final_sections, final_content
 
 
-RC_TEMPLATE = RcFile(read(".shellrc").split())
+RC_TEMPLATE = RcFile(read(".shellrc").split("\n"))
 
 
 def get_rc_path() -> Path:
