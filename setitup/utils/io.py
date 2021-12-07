@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Literal
 
 import toml
-from simple_env_setup.utils.utils import merge_dicts, trim_empty
+from setitup.utils.utils import merge_dicts, trim_empty
 
 
 def read_local(file_path: Path, strip: Literal["l", "r", "b", None] = "r", max_empty_lines: int = 2) -> List[str]:

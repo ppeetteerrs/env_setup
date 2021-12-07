@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "simple_env_setup"
-version = "0.1.4"
-description = "Sets up the development environment to your (my) likings."
+name = "setitup"
+version = "0.1.0"
+description = "Sets up the development environment to your likings."
 authors = ["Peter Yuen"]
 
 [tool.poetry.dependencies]
@@ -14,13 +14,14 @@ flatdict = "^4.0.1"
 pydantic = "^1.8.2"
 Pygments = "^2.10.0"
 PyYAML = "^6.0"
+i-lazy = "^0.1.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
 autopep8 = "^1.6.0"
 
 [tool.poetry.scripts]
-setup_env = "simple_env_setup.main:main"
+setup_env = "setitup.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

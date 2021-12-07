@@ -1,8 +1,8 @@
 import click
-from simple_env_setup.utils.rc import update_rc
-from simple_env_setup.utils.utils import (force, get_home_bin, get_home_dir,
-                                          get_tmp_dir, no_root, overwrite,
-                                          run_shell, should_install)
+from setitup.utils.rc import update_rc
+from setitup.utils.utils import (force, get_home_bin, get_home_dir,
+                                 get_tmp_dir, no_root, overwrite, run_shell,
+                                 should_install)
 
 # ---------------------------------------------------------------------------- #
 #                                      zsh                                     #

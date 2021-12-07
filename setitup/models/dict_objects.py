@@ -1,15 +1,7 @@
 from typing import (Any, Callable, Dict, Iterable, List, Optional, Tuple, Type,
                     TypeVar)
 
-from simple_env_setup.utils.logging import pf
-
-
-def stringy_check(items: Any) -> bool:
-    if not isinstance(items, list):
-        return False
-
-    _items: List[Any] = items
-    return all([isinstance(item, str) for item in _items])
+from setitup.utils.logging import fmt_yaml
 
 
 def listify(stuff: str | Iterable[str]) -> List[str]:
@@ -29,7 +21,7 @@ def check_dict(
     key_specs: List[KeySpec],
 ) -> Dict[str, Any]:
     # Tidy up path
-    full_path_str = " => ".join(path)
+    full_path_str = ".".join(path)
 
     # Check path to current context
     curr_context: Dict[str, Any] | List[Any] = context
@@ -47,15 +39,15 @@ def check_dict(
         elif isinstance(curr_context, list) and key_int >= 0 and len(curr_context) > key_int:
             curr_context = curr_context[key_int]
         else:
-            curr_path_str = " => ".join(path[: i + 1])
+            curr_path_str = ".".join(path[: i + 1])
             raise KeyError(
                 [
-                    f"Error looking for value at path {full_path_str}...",
-                    f"Stopped at {curr_path_str}...",
+                    f"Error looking for value at path {full_path_str}",
+                    f"Stopped at {curr_path_str}",
                     "Current Context:",
-                    pf(curr_context),
+                    fmt_yaml(curr_context),
                     "Context:",
-                    pf(context),
+                    fmt_yaml(context),
                 ]
             )
 
@@ -63,11 +55,11 @@ def check_dict(
     if isinstance(curr_context, list):
         raise ValueError(
             [
-                f"List found at path {full_path_str}...",
+                f"List found at path {full_path_str}",
                 "Current Context:",
-                pf(curr_context),
+                fmt_yaml(curr_context),
                 "Context:",
-                pf(context),
+                fmt_yaml(context),
             ]
         )
 
@@ -76,11 +68,11 @@ def check_dict(
         if key not in curr_context:
             raise KeyError(
                 [
-                    f"Error looking for key {key} at path {full_path_str}...",
+                    f"Error looking for key {key} at path {full_path_str}",
                     "Current Context:",
-                    pf(curr_context),
+                    fmt_yaml(curr_context),
                     "Context:",
-                    pf(context),
+                    fmt_yaml(context),
                 ]
             )
 
@@ -91,11 +83,11 @@ def check_dict(
         if failed_type or failed_validator:
             raise ValueError(
                 [
-                    f"Invalid value {curr_context[key]} at path {full_path_str} => {key}...",
+                    f"Invalid value {curr_context[key]} at path {full_path_str} => {key}",
                     "Current Context:",
-                    pf(curr_context),
+                    fmt_yaml(curr_context),
                     "Context:",
-                    pf(context),
+                    fmt_yaml(context),
                 ]
             )
 
